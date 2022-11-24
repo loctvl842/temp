@@ -1,0 +1,4 @@
+- Use-case name: Receive Task
+- Actor: Janitors, Collectors
+- Description: Người dùng nhận công việc
+- Normal flow:

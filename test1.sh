@@ -1,0 +1,2 @@
+a="ibus-daemon &"
+$a
