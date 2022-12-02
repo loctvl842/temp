@@ -1,0 +1,25 @@
+body {
+  /* background: #000; */
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: #c0c1b526;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+.box-middle {
+  top: 60px;
+  z-index: -1;
+  background: #00ff00;
+}
+
+.rgba {
+  background-color: rgba(255, 0, 0, 0.5);
+  top: 120px;
+}

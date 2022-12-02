@@ -1,8 +1,34 @@
-const THEMES = {
-    "classic": ["#1D1E19", "#F82570", "#A6E12D", "#E4DB73", "#FC961F", "#AE81FF", "#66D9EE", "#FDFFF1"],
-    "pro": ["#221F22", "#FF6188", "#A9DC76", "#FFD866", "#FC9867", "#AB9DF2", "#78DCE8", "#FCFCFA"],
-    "octagon": ["#1E1F2B", "#FF657A", "#BAD761", "#FFD76D", "#FF9B5E", "#C39AC9", "#9CD1BB", "#EAF2F1"],
-    "machine": ["#1D2528", "#FF6D7E", "#A2E57B", "#FFED72", "#FFB270", "#BAA0F8", "#7CD5F1", "#F2FFFC"],
-    "ristretto": ["#211C1C", "#FD6883", "#ADDA78", "#F9CC6C", "#F38D70", "#A8A9EB", "#85DACC", "#FFF1F3"],
-    "spectrum": ["#211C1C", "#FC618D", "#7BD88F", "#FCE566", "#FD9353", "#948AE3", "#5AD4E6", "#F7F1FF"]
-};
+let a = [
+  { name: "loc", age: 16 },
+  { name: "loc", age: 16 },
+  { name: "loc", age: 16 },
+];
+function LightenDarkenColor(col, amt) {
+  var usePound = false;
+
+  if (col[0] == "#") {
+    col = col.slice(1);
+    usePound = true;
+  }
+
+  var num = parseInt(col, 16);
+  console.log(num >> 16);
+
+  var r = (num >> 16) + amt;
+
+  if (r > 255) r = 255;
+  else if (r < 0) r = 0;
+
+  var b = ((num >> 8) & 0x00ff) + amt;
+
+  if (b > 255) b = 255;
+  else if (b < 0) b = 0;
+
+  var g = (num & 0x0000ff) + amt;
+
+  if (g > 255) g = 255;
+  else if (g < 0) g = 0;
+
+  return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+}
+console.log(LightenDarkenColor("#2c2525", 20));
