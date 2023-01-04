@@ -1,1 +1,6 @@
-vim.api.nvim_set_hl(0, "Alo", {fg = "#ff0000", bg = "#00ff00"})
+local loc = {
+	["semantic_tokens"] = "loc",
+	["nvim-treesitter"] = "van",
+}
+
+print(vim.inspect(loc))

@@ -6,17 +6,23 @@ using namespace std;
 
 class A {
 public:
-  int a(int x, int y) { return x + y; }
+  static int X;
+	int x(int x) {
+		return 2;
+	}
 };
 
-int sum(int sum, int b) { return sum + b; }
+int A::X = 2;
+class X {
+	static int A;
+};
+
 
 int main() {
-  int n;
-  std::cout << "Input n : ";
-  std::cin >> n;
-  for (int i = 0; i < n; i++) {
-    std::cout << i << " ";
-  }
-  std::cout << "\n";
+	int a;
+	int &ra = a;
+	std::cout << ra << std::endl;
+	ra++;
+	std::cout << a << std::endl;
+	std::cout << ra << std::endl;
 }
